@@ -4,6 +4,7 @@ bower_components/
 .DS_Store
 .floo
 .flooignore
+.watchmanconfig
 
 # Xcode
 #
@@ -30,6 +31,14 @@ project.xcworkspace
 .idea
 .gradle
 local.properties
+
+# Mobile Deploy
+ios/
+android/
+client/
+index.android.js
+index.ios.js
+todo.md
 
 # node.js
 #

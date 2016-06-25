@@ -12,6 +12,7 @@ import Welcome from './welcome-view';
 import Friends from './friendsList';
 import Saved from './savedDecks';
 
+// This Routes object contains values to route users to on the screen.
 const Routes = {
   search: Search,
   deckView: DeckViewNew,
