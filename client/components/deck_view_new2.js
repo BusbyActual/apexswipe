@@ -91,7 +91,7 @@ export default class deckViewNew extends Component{
   }
 
   _changePage(){
-    if (this.props.currentCard >= 18) {
+    if (this.props.currentCard >= 15) {
       this.props.navigator.push({ name: 'results' });
     }
   }

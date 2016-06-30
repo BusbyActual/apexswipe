@@ -1,40 +1,29 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+var jwt = require('express-jwt');
+var auth0 = require('./auth0.js');
 
-const Yelp = require('yelp');
-const keys = require('./apiKeys');
-
-app.get('/yelpSearch', (req, res) => {
-  const yelp = new Yelp({
-    consumer_key: keys.consumerKey,
-    consumer_secret: keys.consumerSecret,
-    token: keys.token,
-    token_secret: keys.tokenSecret,
-  });
-  
-  const term = req.query.term;
-  const location = req.query.location;
-  
-  yelp.search({ term, location })
-    .then(function (data) {
-      console.log(data);
-      res.send(data);
-    })
-    .catch(function (err) {
-      console.error(err);
-    });
-})
-
-
-
-const port = process.env.PORT || 3000
-http.listen(port, () => {
-  console.log('listening on', port);
+var yelpRouter = require('./routes/yelpRouter');
+var deckRouter = require('./routes/deckRouter');
+var userRouter = require('./routes/userRouter');
+var jwtCheck = jwt({
+  secret: new Buffer(auth0.clientSecret),
+  audience: auth0.clientID
 });
 
+app.use(morgan('dev'));
+app.use('/', express.static('public')); // This is used to serve up static files in the public directory for deployment purposes.
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+// app.use('/', jwtCheck);
+app.use('/yelpSearch', yelpRouter);
+app.use('/decks', deckRouter);
+app.use('/users', userRouter);
 
-
-// module.exports = app;
+module.exports = http;
 
 

@@ -1,0 +1,7 @@
+var auth0 = {
+  authentication: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJpZFZFWmNjQWRBcUU4MXh6VzdtZTN4UjNIU2VSSFJjUSIsInNjb3BlcyI6eyJ1c2VycyI6eyJhY3Rpb25zIjpbInJlYWQiXX19LCJpYXQiOjE0NjY5MDk4ODYsImp0aSI6IjFkZmM2ZmY4MGZmOTBjM2NhOGQ2YmRiNjQ0OGI1ZDY5In0.9p09LQhQC7m45euwHvNDyw8PofOGT2EHw6DDsU7gh28',
+  clientID: 'zpT4RjC4avB8RuI3wEd13nNYsnPDrBrS',
+  clientSecret: '1xEqRPNQDnR3EACyvfRtjTpFulhmZnQ47XvyeNBpU3GpQo7RUE5aGk97m1TsCmX4'
+}
+
+module.exports = auth0;

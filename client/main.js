@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import Nav from './components/nav';
-import configure from './store/configureStore';
-const store = configure();
+import configureStore from './store/configureStore';
+const store = configureStore();
 
 // testing the store => remove later
 store.subscribe( () => {

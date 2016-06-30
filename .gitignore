@@ -4,6 +4,7 @@ bower_components/
 .DS_Store
 .floo
 .flooignore
+.watchmanconfig
 
 # Xcode
 #
@@ -31,6 +32,14 @@ project.xcworkspace
 .gradle
 local.properties
 
+# Mobile Deploy
+ios/
+android/
+client/
+index.android.js
+index.ios.js
+todo.md
+
 # node.js
 #
 node_modules/
@@ -44,3 +53,4 @@ android/keystores/debug.keystore
 
 # API KEYS
 server/apiKeys.js
+server/auth0.js
